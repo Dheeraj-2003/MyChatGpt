@@ -1,0 +1,8 @@
+# Ignore JavaScript files
+/server/build
+
+# Ignore the node_modules directory
+/server/node_modules/
+
+# Ignore the config.env file
+/server/config.env

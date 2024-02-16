@@ -17,7 +17,7 @@ export const openAiResponseController = async (req: Request, res: Response) => {
         model: "gpt-3.5-turbo",
         messages: messages,
         temperature: 1,
-        max_tokens: 512,
+        max_tokens: 256,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,
@@ -28,13 +28,10 @@ export const openAiResponseController = async (req: Request, res: Response) => {
     
     for await (const chunk of stream){
         const data = chunk.choices[0].delta.content || "";
-        console.log(data);
         const response = `data: ${JSON.stringify({data})}\n\n`
         res.write(response);
     }
   } catch (error) {
-    console.log(api_key);
-    console.log(error);
     res.status(500).json({ data: error });
   }
 };

@@ -1,8 +1,6 @@
-import 'dart:ffi';
-
-import 'package:client/bloc/chat_bloc.dart';
+import 'package:client/bloc/chat/chat_bloc.dart';
+import 'package:client/widgets/drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Chat extends StatefulWidget {
@@ -25,7 +23,7 @@ class _ChatState extends State<Chat> {
         title: const Text('SmartChat'),
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.create))],
       ),
-      drawer: const Drawer(),
+      drawer: const AppDrawer(),
       body: BlocConsumer<ChatBloc, ChatState>(
         bloc: chatBloc,
         listener: (context, state) {

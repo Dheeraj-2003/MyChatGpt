@@ -11,7 +11,7 @@ Stream<http.Response> getBotResponseRepo(List<ChatMessage> messages) async* {
 
   http.Client client = http.Client();
   http.Request request = http.Request(
-      'post', Uri.parse("http://192.168.100.8:3000/api/v1/generate_response"));
+      'post', Uri.parse("http://3.82.127.22:3000/api/v1/generate_response"));
   request.headers['Accept'] = "text/event-stream";
   request.headers['Cache-Control'] = "no-cache";
   request.headers['Content-Type'] = "application/json";

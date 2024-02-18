@@ -20,14 +20,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => ChatBloc())
-      ],
+      providers: [BlocProvider(create: (context) => ChatBloc())],
       child: MaterialApp(
-        theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
-            textTheme: GoogleFonts.ubuntuTextTheme()),
+        theme: darkTheme,
         darkTheme: darkTheme,
         home: const BoardingScreen(),
       ),
